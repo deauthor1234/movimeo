@@ -4,8 +4,20 @@ import Favorites from "./pages/Favorites"
 import MainLayout from "./layouts/MainLayout"
 import "./css/main.css"
 import { MovieProvider } from "./contexts/MovieContext"
+import Aos from "aos"
+import "aos/dist/aos.css"
+import { useEffect } from "react"
 
 function App() {
+  useEffect(() => {
+    Aos.init({
+      disable: "phone",
+      duration: 500,
+      easing: "ease-out-cubic",
+      once: false
+    })
+  }, []);
+
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout/>}>
