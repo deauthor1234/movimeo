@@ -12,7 +12,7 @@ function App() {
   useEffect(() => {
     Aos.init({
       disable: "phone",
-      duration: 500,
+      duration: 700,
       easing: "ease-out-cubic",
       once: false
     })
