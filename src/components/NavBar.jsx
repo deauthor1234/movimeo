@@ -30,17 +30,17 @@ const NavBar = () => {
     return (
         <nav>
             <div className="navbar">
-                <div className="navbar-brand">
+                <div className="navbar-brand" data-aos="fade-right">
                     <NavLink to="/"><BiMovie /> Movi<span>Meo</span></NavLink>
                 </div>
-                {isHome && <form onSubmit={handleSearch} className="search-form">
+                {isHome && <form onSubmit={handleSearch} className="search-form" data-aos="fade-up">
                     <BiSearch className="search-ic" />
                     <input type="text" name="search-query"  className="search-bar" placeholder="Search for movies..." value={searchInput} onChange={(e) => setSearchInput(e.target.value)} required />
                     <button type="submit" className="submit-btn">Search</button>
                 </form>}
                 <div className="navbar-links">
-                    <NavLink to="/" className={linkClass}>Home</NavLink>
-                    <NavLink to="/favorites" className={linkClass}>Favorites</NavLink>
+                    <NavLink to="/" className={linkClass} data-aos="fade-up" data-aos-once="true">Home</NavLink>
+                    <NavLink to="/favorites" className={linkClass} data-aos="fade-down">Favorites</NavLink>
                     <div className="animation start-home"></div>
                 </div>
             </div>

@@ -11,7 +11,7 @@ const ScrollToTop = () => {
     }, [loading, favorites])
 
     return (
-        scrollableState && <div className="scroll-to-top-btn" onClick={() => scrollTo(0, 0)}>
+        scrollableState && <div className="scroll-to-top-btn" onClick={() => scrollTo(0, 0)} data-aos="fade-up">
             <BiUpArrowAlt className="btn-ic" />
         </div>
     )
