@@ -1,8 +1,22 @@
-# React + Vite
+# Movimeo
+Movimeo is a **ReactJS** movie discovery app that lets users explore trending, top-rated, and upcoming films with detailed information, search and add-to-favorite features, smooth animations, and a responsive design.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 Live Demo
+🔗 [View Website](https:/movimeo-project.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## ✨ Highlights
+- 🔍 Search & Explore: Find movies by title, genre, or keyword
+- 🎞 Movie Details: View synopsis, ratings, cast, and release dates
+- 📱 Responsive Design: Fully optimized for mobile, tablet, and desktop
+- 🎨 Modern UI: Built with smooth animations and interactive movie cards
+- ⚡ Dynamic Data: Fetched from a movie API for real-time updates
+
+---
+
+## 👤 Author
+**Oladapo Authority**  
+- GitHub: [@deauthor1234](https://github.com/deauthor1234)
