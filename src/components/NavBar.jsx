@@ -21,7 +21,7 @@ const NavBar = () => {
             searchResults.length != 0 && await setSearchKeyword(searchInput)
         } catch(err) {
             console.log(err);
-            setError('Failed to search for movies...')
+            setError('Encountered an error while searching for movies...')
         } finally {
             setLoading(false)
         }

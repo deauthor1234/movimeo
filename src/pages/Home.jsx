@@ -127,15 +127,16 @@ const Home = () => {
                 </header>
             }  
             <div className="container">
+                {searching && <p className="back-btn" onClick={() => {
+                    setSearching(false)
+                    setError(null)
+                    setSearchDep(searchDep + 1)
+                }}><BiLeftArrowAlt className="ic" /> Back to Home</p>}
+                {error && <div className={`error-message ${searching && "searching"}`}>{error}</div>}
                 {loading ? (
                 <div className="loading">Loading...</div>
                 ) : (
                 <div className="movie-categories">
-                    {searching && <p className="back-btn" onClick={() => {
-                        setSearching(false)
-                        setError(null)
-                        setSearchDep( + 1)
-                    }}><BiLeftArrowAlt className="ic" /> Back to Home</p>}
                     {searching && !error && <p className="search-results-heading">Search Results of "{searchKeyword}"</p>}
                     {!error && searching && <div className="searched-movies-wrapper">
                         {searchedMovies.map((movie) => (
@@ -211,10 +212,8 @@ const Home = () => {
                         ))}
                     </Swiper>}
                 </div>
-                
                 )}
             </div>
-            {error && <div className="error-message">{error}</div>}
             {(!error && !searching && !loading) && <footer>
                 <div className="container">
                     <div className="org-info">
