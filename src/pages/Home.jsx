@@ -19,7 +19,7 @@ const Home = () => {
     const [topRatedMovies, setTopRatedMovies] = useState([]);
     const [upcomingMovies, setUpcomingMovies] = useState([]);
     const [airingMovies, setAiringMovies] = useState([]);
-    const {searchedMovies, loading, setLoading, searching, setSearching, searchKeyword, error, setError, setIsHome} = useMovieContext()
+    const {searchedMovies, loading, setLoading, searching, setSearching, searchKeyword, searchDep, setSearchDep, error, setError, setIsHome} = useMovieContext()
 
     //Updating isHome status
     useEffect(() => {
@@ -41,7 +41,7 @@ const Home = () => {
         }
         
         loadPopularMovies()
-    }, [])
+    }, [searchDep])
     
     //Fetching top rated movies
     useEffect(() => {
@@ -61,7 +61,7 @@ const Home = () => {
         }
 
         loadTopRatedMovies()
-    }, [])
+    }, [searchDep])
 
     //Fetching upcoming movies
     useEffect(() => {
@@ -81,7 +81,7 @@ const Home = () => {
         }
 
         loadUpcomingMovies()
-    }, [])
+    }, [searchDep])
  
     //Fetching airing movies
     useEffect(() => {
@@ -101,7 +101,7 @@ const Home = () => {
         }
 
         loadAiringMovies()
-    }, [])
+    }, [searchDep])
 
     const headerMovies = popularMovies.slice(0,5);
     const recentMovies = [...popularMovies, ...topRatedMovies, ...upcomingMovies]
@@ -134,6 +134,7 @@ const Home = () => {
                     {searching && <p className="back-btn" onClick={() => {
                         setSearching(false)
                         setError(null)
+                        setSearchDep( + 1)
                     }}><BiLeftArrowAlt className="ic" /> Back to Home</p>}
                     {searching && !error && <p className="search-results-heading">Search Results of "{searchKeyword}"</p>}
                     {!error && searching && <div className="searched-movies-wrapper">

@@ -8,6 +8,7 @@ export const MovieProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [searching, setSearching] = useState(false);
+    const [searchDep, setSearchDep] = useState(0);
     const [favorites, setFavorites] = useState([]);
     const [searchedMovies, setSearchedMovies] = useState([]);
     const [searchInput, setSearchInput] = useState('');
@@ -44,6 +45,8 @@ export const MovieProvider = ({ children }) => {
         setSearchedMovies,
         searching,
         setSearching,
+        searchDep,
+        setSearchDep,
         loading,
         setLoading,
         searchInput, 
