@@ -19,7 +19,11 @@ const Home = () => {
     const [topRatedMovies, setTopRatedMovies] = useState([]);
     const [upcomingMovies, setUpcomingMovies] = useState([]);
     const [airingMovies, setAiringMovies] = useState([]);
-    const {searchedMovies, loading, setLoading, searching, setSearching, searchKeyword, searchDep, setSearchDep, error, setError, setIsHome} = useMovieContext()
+    const {
+        searchedMovies, loading, setLoading, searching, setSearching,
+        searchKeyword, searchDep, setSearchDep, error, setError, setIsHome,
+        isDarkTheme
+    } = useMovieContext()
 
     //Updating isHome status
     useEffect(() => {
@@ -108,7 +112,7 @@ const Home = () => {
     const updatedRecentMovies = recentMovies.reverse().filter((movie) => movie.release_date?.split("-")[0] === "2025")
     
     return (
-        <section id="home">
+        <section id="home" className={!isDarkTheme && "light"}>
             <ScrollToTop />
             {(!error && !searching) &&
                 <header>

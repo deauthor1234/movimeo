@@ -28,7 +28,12 @@ html::-webkit-scrollbar-thumb {
 }
 
 body {
-    background: var(--bg-color);
+    background: repeating-linear-gradient(var(--gray-color), var(--bg-color), var(--gray-color));
+    color: var(--text-color);
+}
+
+#home.light {
+    background: var(--main-color);
     color: var(--text-color);
 }
 
@@ -55,6 +60,10 @@ nav {
     display: flex;
     justify-content: center;
     z-index: 1000;
+}
+
+nav.light {
+    background: #fff8;
 }
 
 nav .navbar {
@@ -84,6 +93,65 @@ nav .navbar {
     color: var(--dark-color);
     font-weight: 600;
     padding: 0 0 0 0.3rem;
+}
+
+nav .nav-group {
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+}
+
+nav .themeToggle {
+    background: var(--main-color);
+    border-radius: 50px;
+    min-width: 3rem;
+    height: 1.6rem;
+    position: relative;
+    border: 3px solid var(--main-color);
+    cursor: pointer;
+}
+
+nav.light .themeToggle {
+    background: var(--dark-color);
+    border-color: var(--dark-color);
+}
+
+nav .themeToggle .thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: var(--dark-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+nav.light .themeToggle .thumb {
+    background: var(--main-color);
+    right: 0;
+    left: unset;
+}
+
+nav .themeToggle:hover svg {
+    rotate: 180deg;
+}
+
+.themeToggle .thumb svg {
+    color: var(--main-color);
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.themeToggle .thumb svg.moon {
+    display: none;
+}
+
+.themeToggle .thumb svg.sun {
+    display: none;
 }
 
 nav .navbar-links {

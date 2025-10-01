@@ -14,6 +14,7 @@ export const MovieProvider = ({ children }) => {
     const [searchInput, setSearchInput] = useState('');
     const [searchKeyword, setSearchKeyword] = useState();
     const [isHome, setIsHome] = useState(true);
+    const [isDarkTheme, setIsDarkTheme] = useState(true);
     
     useEffect(() => {
         const storedFavorites = localStorage.getItem('favorites')
@@ -56,7 +57,9 @@ export const MovieProvider = ({ children }) => {
         searchKeyword,
         setSearchKeyword,
         isHome,
-        setIsHome
+        setIsHome,
+        isDarkTheme,
+        setIsDarkTheme
     }
 
     return <MovieContext.Provider value={value}>

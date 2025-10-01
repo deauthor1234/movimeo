@@ -1,11 +1,11 @@
 import { NavLink } from "react-router-dom"
 import { searchMovies } from "../services/api"
-import { BiMovie, BiSearch } from "react-icons/bi"
+import { BiMovie, BiSearch, BiSolidMoon, BiSolidSun } from "react-icons/bi"
 import { useMovieContext } from '../contexts/MovieContext';
 
 const NavBar = () => {
     const linkClass = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
-    const {setSearchedMovies, loading, setLoading, setSearching, setSearchKeyword, searchInput, setSearchInput, setError, isHome} = useMovieContext()
+    const {setSearchedMovies, loading, setLoading, setSearching, setSearchKeyword, searchInput, setSearchInput, setError, isHome, isDarkTheme, setIsDarkTheme} = useMovieContext()
 
     const handleSearch = async (e) => {
         e.preventDefault();
@@ -28,7 +28,7 @@ const NavBar = () => {
     }
 
     return (
-        <nav>
+        <nav className={!isDarkTheme && "light"}>
             <div className="navbar">
                 <div className="navbar-brand" data-aos="fade-right">
                     <NavLink to="/"><BiMovie /> Movi<span>Meo</span></NavLink>
@@ -38,10 +38,15 @@ const NavBar = () => {
                     <input type="text" name="search-query"  className="search-bar" placeholder="Search for movies..." value={searchInput} onChange={(e) => setSearchInput(e.target.value)} required />
                     <button type="submit" className="submit-btn">Search</button>
                 </form>}
-                <div className="navbar-links">
-                    <NavLink to="/" className={linkClass} data-aos="fade-up" data-aos-once="true">Home</NavLink>
-                    <NavLink to="/favorites" className={linkClass} data-aos="fade-down">Favorites</NavLink>
-                    <div className="animation start-home"></div>
+                <div className="nav-group">
+                    <div onClick={() => isDarkTheme ? setIsDarkTheme(false) : setIsDarkTheme(true)} className="themeToggle">
+                        <div className="thumb"><BiSolidMoon className="moon" /><BiSolidSun className="sun" /></div>
+                    </div>
+                    <div className="navbar-links">
+                        <NavLink to="/" className={linkClass} data-aos="fade-up" data-aos-once="true">Home</NavLink>
+                        <NavLink to="/favorites" className={linkClass} data-aos="fade-down">Favorites</NavLink>
+                        <div className="animation start-home"></div>
+                    </div>
                 </div>
             </div>
         </nav>
