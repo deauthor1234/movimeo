@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
     margin: 0;
     padding: 0;
-    font-family:'Trebuchet MS';
+    font-family:"Jost";
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -19,7 +21,7 @@ html::-webkit-scrollbar-thumb {
     --main-color: #fff;
     --main-color-hover: #cacaca;
     --dark-color: #000;
-    --bg-color: #1b1b1b;
+    --bg-color: #19191a;
     --gray-color: #333;
     --text-color: #d1d1d1;
     --max-width: 1280px;
