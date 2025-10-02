@@ -32,6 +32,10 @@ body {
     color: var(--text-color);
 }
 
+#home {
+    transition: all 0.3s ease-in;
+}
+
 #home.light {
     background: var(--main-color);
     color: var(--text-color);
@@ -117,21 +121,21 @@ nav .themeToggle {
     min-width: 3rem;
     height: 1.6rem;
     position: relative;
-    border: 3px solid var(--main-color);
     cursor: pointer;
 }
 
 nav.light .themeToggle {
-    box-shadow: 0 2px 2px #0001;
+    background: #e6e6e6;
 }
 
 nav .themeToggle .thumb {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    width: 50%;
-    height: 100%;
-    background: var(--dark-color);
+    transform: translateX(-50%) translateY(-50%);
+    width: 2.3rem;
+    height: 2.3rem;
+    background: #555;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -140,8 +144,10 @@ nav .themeToggle .thumb {
 }
 
 nav.light .themeToggle .thumb {
+    right: 0;
+    left: unset;
     background: orange;
-    transform: translateX(100%);
+    transform: translateX(50%) translateY(-50%);
 }
 
 nav .themeToggle:hover svg {
@@ -278,6 +284,7 @@ nav .start-home,
 
 nav.light .search-form .search-bar {
     background: #fff5;
+    box-shadow: 0 0 10px #0002;
 }
 
 .search-form .search-bar::placeholder {
@@ -314,13 +321,23 @@ nav.light .search-form .submit-btn {
 
 header {
     width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+#home.light header {
+    padding: 0 2rem;
 }
 
 header.other {
     margin: 0 0 4rem;
 }
 
-header.other .header-card-wrapper {
+#home.light header.other {
+    padding: 0;
+}
+
+header.other .header-card-wrapper,
+#home.light .header-card-wrapper {
     border-radius: 50px;
 }
 
