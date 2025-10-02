@@ -40,7 +40,7 @@ const NavBar = () => {
                 </form>}
                 <div className="nav-group">
                     <div onClick={() => isDarkTheme ? setIsDarkTheme(false) : setIsDarkTheme(true)} className="themeToggle">
-                        <div className="thumb"><BiSolidMoon className="moon" /><BiSolidSun className="sun" /></div>
+                        <div className="thumb">{isDarkTheme ? <BiSolidMoon className="moon" /> : <BiSolidSun className="sun" />}</div>
                     </div>
                     <div className="navbar-links">
                         <NavLink to="/" className={linkClass} data-aos="fade-up" data-aos-once="true">Home</NavLink>
