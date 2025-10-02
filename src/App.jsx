@@ -14,7 +14,7 @@ function App() {
       disable: "phone",
       duration: 700,
       easing: "ease-out-cubic",
-      once: false
+      once: true
     })
   }, []);
 
