@@ -110,6 +110,8 @@ const Home = () => {
     const headerMovies = popularMovies.slice(0,5);
     const recentMovies = [...popularMovies, ...topRatedMovies, ...upcomingMovies]
     const updatedRecentMovies = recentMovies.reverse().filter((movie) => movie.release_date?.split("-")[0] === "2025")
+
+    !isDarkTheme && document.body.classList.add("light");
     
     return (
         <section id="home" className={!isDarkTheme && "light"}>
