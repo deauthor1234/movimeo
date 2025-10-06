@@ -111,10 +111,10 @@ const Home = () => {
     const recentMovies = [...popularMovies, ...topRatedMovies, ...upcomingMovies]
     const updatedRecentMovies = recentMovies.reverse().filter((movie) => movie.release_date?.split("-")[0] === "2025")
 
-    !isDarkTheme && document.body.classList.add("light");
+    !isDarkTheme ? document.body.classList.add("light") : document.body.classList.remove("light")
     
     return (
-        <section id="home" className={!isDarkTheme && "light"}>
+        <section id="home">
             <ScrollToTop />
             {(!error && !searching) &&
                 <header>
@@ -228,10 +228,10 @@ const Home = () => {
                         </div>
                         <p className="footer-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae magnam labore quasi, in libero!</p>
                         <div className="footer-ics">
-                            <BiLogoInstagram />
-                            <BiLogoTiktok />
-                            <BiLogoFacebook />
-                            <BiLogoTwitter />
+                            <i className="ic"><BiLogoInstagram /></i>
+                            <i className="ic"><BiLogoTiktok /></i>
+                            <i className="ic"><BiLogoFacebook /></i>
+                            <i className="ic"><BiLogoTwitter /></i>
                         </div>
                     </div>
                     <div className="footer-list">

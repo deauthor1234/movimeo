@@ -11,7 +11,7 @@ const MovieCard = ({ movie }) => {
     : addToFavorites(movie)
   }
 
-  const movieOverview = movie.overview?.substring(0, 90);
+  const movieOverview = movie.overview?.substring(0, 80);
 
   return (
     <div className="movie-card">
@@ -22,14 +22,17 @@ const MovieCard = ({ movie }) => {
           <button><FaHeart /></button>
         </div>
         <Link className="prev-btn" to={`https://www.themoviedb.org/movie/${movie.id}/watch`}><FaPlay className='ic' /></Link>
-        <p className="movie-overview">{movieOverview.trim()}{(movieOverview.charAt(89) != "" && movieOverview.charAt(179) != ".") && "..."}</p>
+        <p className="movie-overview">{movieOverview.trim()}{(movieOverview.charAt(79) != "" && movieOverview.charAt(79) != ".") && "..."}</p>
       </div>
       <div className="movie-info">
         <div>
           <h3 className="movie-title">{movie.title}{movie.name}</h3>
           <p className="release-date">{movie.release_date?.split("-")[0]}{movie.first_air_date?.split("-")[0]}</p>
         </div>
-        <p className="lang">{movie.original_language}</p>
+        <div>
+          <p className="lang">{movie.original_language}</p>
+          <p className="rating">{movie.rating}</p>
+        </div>
       </div>
     </div>
   )
