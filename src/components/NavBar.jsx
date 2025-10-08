@@ -6,7 +6,8 @@ import { useMovieContext } from '../contexts/MovieContext';
 const NavBar = () => {
     const linkClass = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
     const {setSearchedMovies, loading, setLoading, setSearching, setSearchKeyword, searchInput, setSearchInput, setError, isHome, isDarkTheme, setIsDarkTheme} = useMovieContext()
-
+    !isDarkTheme ? document.body.classList.add("light") : document.body.classList.remove("light")
+    
     const handleSearch = async (e) => {
         e.preventDefault();
         if (!searchInput.trim()) return
