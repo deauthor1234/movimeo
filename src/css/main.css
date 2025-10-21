@@ -872,6 +872,7 @@ footer {
 footer .container {
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
@@ -897,6 +898,7 @@ footer .bottom-info span {
 footer .org-info .footer-des {
     margin: 1rem 0;
     line-height: 30px;
+    max-width: 25rem;
 }
 
 footer .org-info .footer-ics {
@@ -974,6 +976,6 @@ footer .download-media svg {
 }
 
 /* Making Responsive */
-@media (max-width: 1320px) {
+@media (max-width: 950px) {
     
 }
