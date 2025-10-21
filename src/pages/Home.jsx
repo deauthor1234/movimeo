@@ -130,93 +130,111 @@ const Home = () => {
                     </Swiper>
                 </header>
             }  
-            <div className="container">
-                {searching && <p className="back-btn" onClick={() => {
-                    setSearching(false)
-                    setError(null)
-                    setSearchDep(searchDep + 1)
-                }}><BiLeftArrowAlt className="ic" /> Back to Home</p>}
-                {error && <div className={`error-message ${searching && "searching"}`}>{error}</div>}
-                {loading ? (
-                <div className="loading">Loading...</div>
-                ) : (
-                <div className="movie-categories">
-                    {searching && !error && <p className="search-results-heading">Search Results of "{searchKeyword}"</p>}
-                    {!error && searching && <div className="searched-movies-wrapper">
-                        {searchedMovies.map((movie) => (
-                            <MovieCard movie={movie} key={movie.id} />
-                        ))}
-                    </div>}
-                    {(!error && !searching) && <MovieCatHeading tag="POPULAR" />}
-                    {!searching && <Swiper modules={[Navigation, A11y]}
-                    spaceBetween={20}
-                    slidesPerView={4}
-                    navigation
-                    className="movie-cards-wrapper">
-                        {popularMovies.map((movie) => (
-                            <SwiperSlide key={movie.id}>
-                                <MovieCard movie={movie} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>}
+            <div className="container_wrapper">
+                <div className="container">
+                    {searching && <p className="back-btn" onClick={() => {
+                        setSearching(false)
+                        setError(null)
+                        setSearchDep(searchDep + 1)
+                    }}><BiLeftArrowAlt className="ic" /> Back to Home</p>}
+                    {error && <div className={`error-message ${searching && "searching"}`}>{error}</div>}
+                    {loading ? (
+                    <div className="loading">Loading...</div>
+                    ) : (
+                    <div className="movie-categories">
+                        {searching && !error && <p className="search-results-heading">Search Results of "{searchKeyword}"</p>}
+                        {!error && searching && <div className="searched-movies-wrapper">
+                            {searchedMovies.map((movie) => (
+                                <MovieCard movie={movie} key={movie.id} />
+                            ))}
+                        </div>}
+                        {(!error && !searching) && <MovieCatHeading tag="POPULAR" />}
+                        {!searching && <Swiper modules={[Navigation, A11y]}
+                        spaceBetween={20}
+                        slidesPerView={2}
+                        breakpoints={{
+                            1320 : {slidesPerView: 4 },
+                            890 : {slidesPerView: 3 }
+                        }}
+                        navigation
+                        className="movie-cards-wrapper">
+                            {popularMovies.map((movie) => (
+                                <SwiperSlide key={movie.id}>
+                                    <MovieCard movie={movie} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>}
 
-                    {(!error && !searching) && <MovieCatHeading tag="TOP RATED" />}
-                    {!searching && <Swiper modules={[Navigation, A11y]}
-                    spaceBetween={20}
-                    slidesPerView={4}
-                    navigation
-                    className="movie-cards-wrapper">
-                        {topRatedMovies.map((movie) => (
-                            <SwiperSlide key={movie.id}>
-                                <MovieCard movie={movie} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>}
+                        {(!error && !searching) && <MovieCatHeading tag="TOP RATED" />}
+                        {!searching && <Swiper modules={[Navigation, A11y]}
+                        spaceBetween={20}
+                        slidesPerView={2}
+                        breakpoints={{
+                            1320 : {slidesPerView: 4 },
+                            890 : {slidesPerView: 3 }
+                        }}
+                        navigation
+                        className="movie-cards-wrapper">
+                            {topRatedMovies.map((movie) => (
+                                <SwiperSlide key={movie.id}>
+                                    <MovieCard movie={movie} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>}
 
-                    {(!error, !searching) &&
-                        <header className="other">
-                            <Swiper modules={[Navigation, Pagination, A11y]}
-                            spaceBetween={0}
-                            slidesPerView={1}
-                            navigation
-                            pagination={{ clickable: true }}
-                            className="header-card-wrapper">
-                                {airingMovies.map((movie) => (
-                                    <SwiperSlide key={movie.id}>
-                                        <HeaderCard movie={movie} tag="Airing Today" />
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </header>
-                    }
+                        {(!error, !searching) &&
+                            <header className="other">
+                                <Swiper modules={[Navigation, Pagination, A11y]}
+                                spaceBetween={0}
+                                slidesPerView={1}
+                                navigation
+                                pagination={{ clickable: true }}
+                                className="header-card-wrapper">
+                                    {airingMovies.map((movie) => (
+                                        <SwiperSlide key={movie.id}>
+                                            <HeaderCard movie={movie} tag="Airing Today" />
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+                            </header>
+                        }
 
-                    {(!error && !searching) && <MovieCatHeading tag="THIS YEAR'S" />}
-                    {!searching && <Swiper modules={[Navigation, A11y]}
-                    spaceBetween={20}
-                    slidesPerView={4}
-                    navigation
-                    className="movie-cards-wrapper">
-                        {updatedRecentMovies.map((movie) => (
-                            <SwiperSlide key={movie.id}>
-                                <MovieCard movie={movie} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>}
+                        {(!error && !searching) && <MovieCatHeading tag="THIS YEAR'S" />}
+                        {!searching && <Swiper modules={[Navigation, A11y]}
+                        spaceBetween={20}
+                        slidesPerView={2}
+                        breakpoints={{
+                            1320 : {slidesPerView: 4 },
+                            890 : {slidesPerView: 3 }
+                        }}
+                        navigation
+                        className="movie-cards-wrapper">
+                            {updatedRecentMovies.map((movie) => (
+                                <SwiperSlide key={movie.id}>
+                                    <MovieCard movie={movie} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>}
 
-                    {(!error && !searching) && <MovieCatHeading tag="UPCOMING" />}
-                    {!searching && <Swiper modules={[Navigation, A11y]}
-                    spaceBetween={20}
-                    slidesPerView={4}
-                    navigation
-                    className="movie-cards-wrapper">
-                        {upcomingMovies.map((movie) => (
-                            <SwiperSlide key={movie.id}>
-                                <MovieCard movie={movie} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>}
+                        {(!error && !searching) && <MovieCatHeading tag="UPCOMING" />}
+                        {!searching && <Swiper modules={[Navigation, A11y]}
+                        spaceBetween={20}
+                        slidesPerView={2}
+                        breakpoints={{
+                            1320 : {slidesPerView: 4 },
+                            890 : {slidesPerView: 3 }
+                        }}
+                        navigation
+                        className="movie-cards-wrapper">
+                            {upcomingMovies.map((movie) => (
+                                <SwiperSlide key={movie.id}>
+                                    <MovieCard movie={movie} />
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>}
+                    </div>
+                    )}
                 </div>
-                )}
             </div>
             {(!error && !searching && !loading) && <footer>
                 <div className="container">

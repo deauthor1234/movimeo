@@ -1,4 +1,4 @@
-import { FaHeart, FaPlay } from 'react-icons/fa';
+import { FaHeart, FaPlay, FaStar } from 'react-icons/fa';
 import { useMovieContext } from '../contexts/MovieContext';
 import { Link } from 'react-router-dom';
 const MovieCard = ({ movie }) => {
@@ -12,6 +12,7 @@ const MovieCard = ({ movie }) => {
   }
 
   const movieOverview = movie.overview?.substring(0, 80);
+  const movieTitle = movie.title?.substring(0, 18);
 
   return (
     <div className="movie-card">
@@ -26,12 +27,14 @@ const MovieCard = ({ movie }) => {
       </div>
       <div className="movie-info">
         <div>
-          <h3 className="movie-title">{movie.title}{movie.name}</h3>
+          <h3 className="movie-title">
+            {movieTitle.trim()}{movieTitle.charAt(17) != "" && "..."}
+          </h3>
           <p className="release-date">{movie.release_date?.split("-")[0]}{movie.first_air_date?.split("-")[0]}</p>
         </div>
         <div>
           <p className="lang">{movie.original_language}</p>
-          <p className="rating">{movie.rating}</p>
+          <p className="rating"><FaStar /> {movie.vote_average?.toFixed(1)}</p>
         </div>
       </div>
     </div>

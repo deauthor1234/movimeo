@@ -48,6 +48,13 @@ section {
     flex-direction: column;
 }
 
+.container_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
 .container {
     width: 100%;
     max-width: var(--max-width);
@@ -746,7 +753,7 @@ header .swiper-pagination-bullet-active {
     padding: 1rem;
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1.3rem;
 }
 
 .movie-card .movie-info .movie-title {
@@ -773,10 +780,20 @@ header .swiper-pagination-bullet-active {
     line-height: 10px;
     height: fit-content;
     border-radius: 0.2rem;
+    margin: 0 0 0.78rem;
 }
 
 .light .movie-info .lang {
     color: var(--main-color);
+}
+
+.movie-info .rating svg {
+    color: var(--main-color);
+    translate: 0 2px;
+}
+
+.light .movie-info .rating svg {
+    color: orange;
 }
 
 .favorites {
@@ -843,6 +860,7 @@ footer {
     width: 100%;
     background: var(--dark-color);
     flex-direction: column;
+    padding: 0 2rem;
 }
 
 .light footer {
@@ -851,9 +869,13 @@ footer {
     font-weight: 500;
 }
 
-footer .container:nth-child(1) {
+footer .container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+footer .container:nth-child(1) {
     gap: 3rem;
     padding: 2rem 0;
 }
@@ -861,8 +883,6 @@ footer .container:nth-child(1) {
 footer .container:nth-child(2) {
     border-top: 1px solid var(--gray-color);
     padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
 }
 
 footer .bottom-info span {
@@ -951,4 +971,9 @@ footer .download-media .download-btn:hover {
 
 footer .download-media svg {
     font-size: 2rem;
+}
+
+/* Making Responsive */
+@media (max-width: 1320px) {
+    
 }
