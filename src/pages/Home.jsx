@@ -154,7 +154,7 @@ const Home = () => {
                         slidesPerView={2}
                         breakpoints={{
                             1320 : {slidesPerView: 4 },
-                            890 : {slidesPerView: 3 }
+                            910 : {slidesPerView: 3 }
                         }}
                         navigation
                         className="movie-cards-wrapper">
@@ -171,7 +171,7 @@ const Home = () => {
                         slidesPerView={2}
                         breakpoints={{
                             1320 : {slidesPerView: 4 },
-                            890 : {slidesPerView: 3 }
+                            910 : {slidesPerView: 3 }
                         }}
                         navigation
                         className="movie-cards-wrapper">
@@ -205,7 +205,7 @@ const Home = () => {
                         slidesPerView={2}
                         breakpoints={{
                             1320 : {slidesPerView: 4 },
-                            890 : {slidesPerView: 3 }
+                            910 : {slidesPerView: 3 }
                         }}
                         navigation
                         className="movie-cards-wrapper">
@@ -222,7 +222,7 @@ const Home = () => {
                         slidesPerView={2}
                         breakpoints={{
                             1320 : {slidesPerView: 4 },
-                            890 : {slidesPerView: 3 }
+                            910 : {slidesPerView: 3 }
                         }}
                         navigation
                         className="movie-cards-wrapper">

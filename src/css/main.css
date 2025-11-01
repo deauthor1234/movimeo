@@ -639,6 +639,7 @@ header .swiper-pagination-bullet-active {
     transition: all 0.8s;
     border-radius: 10px;
     overflow: hidden;
+    cursor: default;
 }
 
 .light .movie-card {
@@ -776,10 +777,19 @@ header .swiper-pagination-bullet-active {
     gap: 1.3rem;
 }
 
+.movie-card .movie-info div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.movie-card .movie-info div:nth-child(2) {
+    align-items: end;
+}
+
 .movie-card .movie-info .movie-title {
     font-size: 1.2rem;
     font-weight: 600;
-    margin: 0 0 0.78rem;
     line-height: 25px;
 }
 
@@ -799,8 +809,8 @@ header .swiper-pagination-bullet-active {
     padding: 0.5rem;
     line-height: 10px;
     height: fit-content;
+    width: fit-content;
     border-radius: 0.2rem;
-    margin: 0 0 0.78rem;
 }
 
 .light .movie-info .lang {
@@ -996,6 +1006,25 @@ footer .download-media svg {
 }
 
 /* Making Responsive */
+@media (max-width: 1005px) {
+    .movie-card .movie-info .movie-title {
+        font-size: 1.05rem;
+    }
+
+    .movie-card .movie-info .release-date,
+    .movie-card .movie-info .rating {
+        font-size: 0.93rem;
+    }
+
+    .movie-card .movie-info {
+        gap: 0;
+    }
+
+    .movie-card .movie-info div {
+        gap: 0.6rem;
+    }
+}
+
 @media (max-width: 950px) {
     .search-form {
         position: absolute;
@@ -1036,5 +1065,24 @@ footer .download-media svg {
 
     .search-btn {
         display: flex;
+    }
+}
+
+@media (max-width: 909px) {
+    .movie-card .movie-info .movie-title {
+        font-size: 1.2rem;
+    }
+
+    .movie-card .movie-info .release-date,
+    .movie-card .movie-info .rating {
+        font-size: 1rem;
+    }
+
+    .movie-card .movie-info {
+        gap: 1.3rem;
+    }
+
+    .movie-card .movie-info div {
+        gap: 1rem;
     }
 }
