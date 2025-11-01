@@ -377,6 +377,8 @@ header .header-card-wrapper {
 
 header.other .header-card {
     height: 35rem;
+    min-height: auto;
+    max-height: auto;
 }
 
 header .header-card {
@@ -1025,7 +1027,7 @@ footer .download-media svg {
     }
 
     header.other .header-card {
-        height: 25rem;
+        height: 30rem;
     }
 
     .movie-card .movie-info .movie-title {
