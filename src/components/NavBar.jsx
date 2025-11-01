@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom"
 import { searchMovies } from "../services/api"
 import { BiMovie, BiSearch, BiSolidMoon, BiSolidSun } from "react-icons/bi"
 import { useMovieContext } from '../contexts/MovieContext';
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Aos from "aos";
 
 const NavBar = () => {
     const linkClass = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
@@ -30,13 +31,28 @@ const NavBar = () => {
         }
     }
 
+    const [isDisabled, setIsDisabled] = useState(window.innerWidth <= 950);
+
+    useEffect(() => {
+        Aos.init({ duration: 1000, once: true });
+        const handleResize = () => {
+            const disable = window.innerWidth <= 950;
+            setIsDisabled(disable);
+            Aos.refreshHard();
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     return (
         <nav className={!isDarkTheme && "light"}>
             <div className="navbar">
                 <div className="navbar-brand" data-aos="fade-right">
                     <NavLink to="/"><BiMovie /> Movi<span>Meo</span></NavLink>
                 </div>
-                {isHome && <form onSubmit={handleSearch} className={`search-form${searchBarClass}`} data-aos="fade-up">
+                {isHome && <form onSubmit={handleSearch} className={`search-form${searchBarClass}`}{...(!isDisabled && { "data-aos": "fade-up" })}>
                     <BiSearch className="search-ic" />
                     <input type="text" name="search-query"  className="search-bar" placeholder="Search for movies..." value={searchInput} onChange={(e) => setSearchInput(e.target.value)} required />
                     <button type="submit" className="submit-btn">Search</button>
