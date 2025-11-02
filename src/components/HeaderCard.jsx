@@ -12,6 +12,7 @@ const HeaderCard = ({ movie, tag }) => {
   }
 
   const movieOverview = movie.overview?.substring(0, 180);
+  const movieName = movie.name?.substring(0, 21);
 
   return (
     <div className="header-card">
@@ -25,7 +26,10 @@ const HeaderCard = ({ movie, tag }) => {
         </div>
         <div className="header-movie-info">
             <p className="movie-tag" data-aos="fade-right">{tag}</p>
-            <h3 className="header-movie-title" data-aos="fade-left">{movie.title}{movie.name}</h3>
+            <h3 className="header-movie-title" data-aos="fade-left">
+              {movie.title}
+              {movieName?.trim()}{movieName?.charAt(20) != "" && "..."}
+            </h3>
             <p className="header-overview" data-aos="fade-right">{movieOverview.trim()}{(movieOverview.charAt(179) != "" && movieOverview.charAt(179) != ".") && "..."}</p>
             <p className="header-release-date">{movie.release_date}{movie.first_air_date}</p>
         </div>

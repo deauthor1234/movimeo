@@ -680,6 +680,10 @@ header .swiper-pagination-bullet-active {
     transform: scale(1.1);
 }
 
+.movie-card .movie-banner img.big {
+    display: none;
+}
+
 .movie-card .movie-banner .overlay,
 .movie-card .movie-banner .movie-overview,
 .movie-banner .favorite-btn,
@@ -1148,5 +1152,74 @@ footer .download-media svg {
 
     .movie-card .movie-info div {
         gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container_wrapper {
+        padding: 0 1.5rem;
+    }
+
+    nav {
+        padding: 0.8rem 1.5rem;
+    }
+
+    .scroll-to-top-btn {
+        margin: 2.7rem 2rem;
+    }
+
+    header .swiper-button-next,
+    header .swiper-button-prev {
+        margin: 0 -0.1rem;
+    }
+
+    header .swiper-button-prev:after,
+    header .swiper-button-next:after {
+        font-size: 1.2rem;
+    }
+
+    header.other .header-card-wrapper {
+        border-radius: 20px;
+    }
+
+    .light header .header-card .header-movie-info {
+        margin: 3rem 3rem 0;
+    }
+    
+    header .header-card .header-movie-info,
+    header.other .header-card .header-movie-info {
+        margin: 0 3rem;
+    }
+
+    header .header-movie-info .header-movie-title {
+        font-size: 2.3rem !important;
+        margin: 1rem 0 !important;
+    }
+
+    header .header-movie-info .movie-tag,
+    header .header-movie-info .header-overview {
+        font-size: 1.1rem !important;
+    }
+
+    header .header-movie-info .header-release-date {
+        font-size: 1.2rem !important;
+    }
+
+    .movie-card .movie-banner img {
+        display: none;
+    }
+
+    .movie-card .movie-banner img.big {
+        display: block;
+    }
+}
+
+@media (max-width: 600px) {
+    .container_wrapper {
+        padding: 0 1.5rem;
+    }
+
+    nav {
+        padding: 0.8rem 1.5rem;
     }
 }

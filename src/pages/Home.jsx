@@ -151,10 +151,11 @@ const Home = () => {
                         {(!error && !searching) && <MovieCatHeading tag="POPULAR" />}
                         {!searching && <Swiper modules={[Navigation, A11y]}
                         spaceBetween={20}
-                        slidesPerView={2}
+                        slidesPerView={1}
                         breakpoints={{
                             1320 : {slidesPerView: 4 },
-                            910 : {slidesPerView: 3 }
+                            910 : {slidesPerView: 3 },
+                            768 : {slidesPerView: 2 }
                         }}
                         navigation
                         className="movie-cards-wrapper">
@@ -168,10 +169,11 @@ const Home = () => {
                         {(!error && !searching) && <MovieCatHeading tag="TOP RATED" />}
                         {!searching && <Swiper modules={[Navigation, A11y]}
                         spaceBetween={20}
-                        slidesPerView={2}
+                        slidesPerView={1}
                         breakpoints={{
                             1320 : {slidesPerView: 4 },
-                            910 : {slidesPerView: 3 }
+                            910 : {slidesPerView: 3 },
+                            768 : {slidesPerView: 2 }
                         }}
                         navigation
                         className="movie-cards-wrapper">
@@ -202,10 +204,11 @@ const Home = () => {
                         {(!error && !searching) && <MovieCatHeading tag="THIS YEAR'S" />}
                         {!searching && <Swiper modules={[Navigation, A11y]}
                         spaceBetween={20}
-                        slidesPerView={2}
+                        slidesPerView={1}
                         breakpoints={{
                             1320 : {slidesPerView: 4 },
-                            910 : {slidesPerView: 3 }
+                            910 : {slidesPerView: 3 },
+                            768 : {slidesPerView: 2 }
                         }}
                         navigation
                         className="movie-cards-wrapper">
@@ -219,10 +222,11 @@ const Home = () => {
                         {(!error && !searching) && <MovieCatHeading tag="UPCOMING" />}
                         {!searching && <Swiper modules={[Navigation, A11y]}
                         spaceBetween={20}
-                        slidesPerView={2}
+                        slidesPerView={1}
                         breakpoints={{
                             1320 : {slidesPerView: 4 },
-                            910 : {slidesPerView: 3 }
+                            910 : {slidesPerView: 3 },
+                            768 : {slidesPerView: 2 }
                         }}
                         navigation
                         className="movie-cards-wrapper">
