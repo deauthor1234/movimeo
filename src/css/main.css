@@ -450,11 +450,15 @@ header .header-card .header-movie-info {
 
 .light header .header-card .header-movie-info {
     font-weight: 500;
+    margin: 3rem 6rem 0;
+}
+
+header.other .header-card .header-movie-info {
+    margin: 0 6rem;
 }
 
 .header-card .header-movie-info .movie-tag {
     font-size: 1.2rem;
-    margin: 0 0 2rem;
     background: var(--main-color);
     color: var(--dark-color);
     width: fit-content;
@@ -463,7 +467,7 @@ header .header-card .header-movie-info {
 
 .header-card .header-movie-info .header-movie-title {
     font-size: 3rem;
-    margin: 0 0 2rem;
+    margin: 2rem 0;
 }
 
 .header-card .header-movie-info .header-overview {
@@ -1022,8 +1026,31 @@ footer .download-media svg {
         font-size: 1.5rem;
     }
 
+    .light header .header-card .header-movie-info,
     header .header-card .header-movie-info {
+        margin: 3rem 4rem 0;
+    }
+    
+    header.other .header-card .header-movie-info {
         margin: 0 4rem;
+    }
+
+    .header-card .header-movie-info .header-movie-title {
+        margin: 1rem 0;
+    }
+
+    header.other .header-movie-info .header-movie-title {
+        font-size: 2.3rem;
+        margin: 1rem 0;
+    }
+
+    header.other .header-movie-info .movie-tag,
+    header.other .header-movie-info .header-overview {
+        font-size: 1.1rem;
+    }
+
+    header.other .header-movie-info .header-release-date {
+        font-size: 1.2rem;
     }
 
     header.other .header-card {
@@ -1054,10 +1081,12 @@ footer .download-media svg {
         top: 0;
         left: 50%;
         translate: -50% 0;
-        width: 90%;
+        width: 91%;
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s;
+        box-shadow: 0 10px 10px #0002;
+        border-radius: 0 0 10px 10px;
     }
 
     .search-form.show {
