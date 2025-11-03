@@ -596,6 +596,11 @@ header .swiper-pagination-bullet-active {
     width: fit-content;
 }
 
+.light .search-results-heading,
+.light .back-btn {
+    color: var(--dark-color);
+}
+
 .back-btn:hover {
     color: var(--main-color-hover);
 }
