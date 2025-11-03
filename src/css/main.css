@@ -840,6 +840,7 @@ header .swiper-pagination-bullet-active {
 
 .favorites {
     margin: 7rem 0 0;
+    padding: 0 2rem;
 }
 
 .favorites .no-favorites {
@@ -863,6 +864,7 @@ header .swiper-pagination-bullet-active {
 .favorites .no-favorites h1 {
     font-size: 2rem;
     color: var(--main-color);
+    text-align: center;
 }
 
 .light .favorites .no-favorites h1 {
@@ -1255,6 +1257,14 @@ footer .download-media svg {
         max-height: 40rem;
     }
 
+    .favorites .no-favorites {
+        row-gap: 0.7rem;
+    }
+       
+    .favorites .no-favorites h1 {
+        font-size: 1.7rem;
+    }
+
     footer {
         padding: 0 1.5rem;
     }
@@ -1305,7 +1315,7 @@ footer .download-media svg {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
-
+ 
     footer {
         padding: 0 1rem;
     }
