@@ -196,6 +196,10 @@ nav .navbar-links {
     font-weight: 500;
 }
 
+nav .navbar-links svg {
+    display: none;
+}
+
 nav .navbar-links .animation {
     position: absolute;
     height: 100%;
@@ -1290,6 +1294,7 @@ footer .download-media svg {
 
     .favorites .no-favorites {
         row-gap: 0.7rem;
+        padding: 2rem;
     }
        
     .favorites .no-favorites h1 {
@@ -1395,6 +1400,27 @@ footer .download-media svg {
 }
 
 @media (max-width: 425px) {
+    nav .navbar {
+        column-gap: 1rem;
+    }
+
+    nav .navbar-links .nav-link {
+        border-radius: 50%;
+        display: flex;
+        padding: 0;
+        min-width: 2rem;
+        height: 2rem;
+    }
+
+    nav .navbar-links span {
+        display: none;
+    }
+
+    nav .navbar-links svg {
+        display: block;
+        margin: auto;
+    }
+
     header .swiper-button-next,
     header .swiper-button-prev {
         display: none;
@@ -1428,6 +1454,15 @@ footer .download-media svg {
     .movie-card .movie-banner .movie-overview {
         padding: 1.5rem;
     }
+
+    .favorites .no-favorites {
+        row-gap: 0.3rem;
+        padding: 1rem;
+    }
+       
+    .favorites .no-favorites h1 {
+        font-size: 1.5rem;
+    }
 }
 
 @media (max-width: 375px) {
@@ -1441,5 +1476,9 @@ footer .download-media svg {
     
     .movie-card .movie-banner .movie-overview {
         padding: 1rem;
+    }
+       
+    .favorites .no-favorites h1 {
+        font-size: 1.25rem;
     }
 }

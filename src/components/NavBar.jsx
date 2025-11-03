@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom"
 import { searchMovies } from "../services/api"
-import { BiMovie, BiSearch, BiSolidMoon, BiSolidSun } from "react-icons/bi"
+import { BiMovie, BiSearch, BiSolidHeart, BiSolidHome, BiSolidMoon, BiSolidSun } from "react-icons/bi"
 import { useMovieContext } from '../contexts/MovieContext';
 import { useState, useEffect } from "react";
 import Aos from "aos";
@@ -65,8 +65,8 @@ const NavBar = () => {
                         </div>
                     </div>
                     <div className="navbar-links">
-                        <NavLink to="/" className={linkClass} data-aos="fade-up" data-aos-once="true">Home</NavLink>
-                        <NavLink to="/favorites" className={linkClass} data-aos="fade-down">Favorites</NavLink>
+                        <NavLink to="/" className={linkClass} data-aos="fade-up" data-aos-once="true"><span>Home</span><BiSolidHome /></NavLink>
+                        <NavLink to="/favorites" className={linkClass} data-aos="fade-down"><span>Favorites</span><BiSolidHeart /></NavLink>
                         <div className="animation start-home"></div>
                     </div>
                 </div>
