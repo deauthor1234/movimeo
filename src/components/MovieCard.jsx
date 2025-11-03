@@ -29,7 +29,7 @@ const MovieCard = ({ movie }) => {
       <div className="movie-info">
         <div>
           <h3 className="movie-title">
-            {movieTitle.trim()}{movieTitle.charAt(17) != "" && "..."}
+            {movieTitle?.trim()}{movieTitle?.charAt(17) != "" && "..."}
           </h3>
           <p className="release-date">{movie.release_date?.split("-")[0]}{movie.first_air_date?.split("-")[0]}</p>
         </div>

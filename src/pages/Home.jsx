@@ -270,7 +270,7 @@ const Home = () => {
                             </ul>
                         </div>
                     </div>
-                    <div>
+                    <div className="download-media-wrapper">
                         <p className="footer-heading">Download The App</p>
                         <div className="download-media">
                             <div className="download-btn"><BiLogoPlayStore /> Play Store</div>
