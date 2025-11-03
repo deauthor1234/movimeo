@@ -615,7 +615,7 @@ header .swiper-pagination-bullet-active {
 
 .searched-movies-wrapper {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
 }
 
@@ -1178,7 +1178,8 @@ footer .download-media svg {
         gap: 1rem;
     }
 
-    .favorites .favorite-movies-wrapper {
+    .favorites .favorite-movies-wrapper,
+    .searched-movies-wrapper {
         grid-template-columns: 1fr 1fr;
     }
 }
@@ -1255,7 +1256,8 @@ footer .download-media svg {
         display: block;
     }
 
-    .favorites .favorite-movies-wrapper {
+    .favorites .favorite-movies-wrapper,
+    .searched-movies-wrapper {
         grid-template-columns: 1fr;
     }
 }
