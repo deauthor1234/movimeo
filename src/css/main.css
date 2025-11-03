@@ -605,6 +605,10 @@ header .swiper-pagination-bullet-active {
     color: var(--main-color-hover);
 }
 
+.light .back-btn:hover {
+    color: var(--gray-color);
+}
+
 .back-btn .ic {
     font-size: 1.3rem;
 }
