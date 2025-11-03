@@ -1431,6 +1431,10 @@ footer .download-media svg {
         margin: auto;
     }
 
+    .search-form .submit-btn {
+        padding: 0.6rem 1.3rem;
+    }
+
     header .swiper-button-next,
     header .swiper-button-prev {
         display: none;
