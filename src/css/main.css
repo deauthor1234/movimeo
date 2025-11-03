@@ -843,7 +843,7 @@ header .swiper-pagination-bullet-active {
 }
 
 .favorites {
-    margin: 7rem 0 0;
+    margin: 6rem 0 0;
     padding: 0 2rem;
 }
 
@@ -1168,10 +1168,15 @@ footer .download-media svg {
     .movie-card .movie-info div {
         gap: 1rem;
     }
+
+    .favorites .favorite-movies-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    .container_wrapper {
+    .container_wrapper,
+    .favorites {
         padding: 0 1.5rem;
     }
 
@@ -1239,6 +1244,10 @@ footer .download-media svg {
 
     .movie-card .movie-banner img.big {
         display: block;
+    }
+
+    .favorites .favorite-movies-wrapper {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1344,7 +1353,8 @@ footer .download-media svg {
 }
 
 @media (max-width: 460px) {
-    .container_wrapper {
+    .container_wrapper,
+    .favorites {
         padding: 0 1rem;
     }
 
