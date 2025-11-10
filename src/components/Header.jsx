@@ -1,5 +1,6 @@
 import HeaderCard from "../components/HeaderCard";
 import { Navigation, Pagination, A11y } from 'swiper/modules';
+import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const Header = ({ movies, tag, nameClass }) => {
