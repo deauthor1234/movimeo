@@ -13,6 +13,7 @@ import { BiLeftArrowAlt } from "react-icons/bi";
 import ScrollToTop from "../components/ScrollToTop";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import Search from "../components/Search";
 
 const Home = () => {
     const [popularMovies, setPopularMovies] = useState([]);
@@ -20,9 +21,8 @@ const Home = () => {
     const [upcomingMovies, setUpcomingMovies] = useState([]);
     const [airingMovies, setAiringMovies] = useState([]);
     const {
-        searchedMovies, loading, setLoading, searching, setSearching,
-        searchKeyword, searchDep, setSearchDep, error, setError, setIsHome,
-        isDarkTheme
+        loading, setLoading, searching, setSearching,
+        searchDep, setSearchDep, error, setError, setIsHome
     } = useMovieContext()
 
     //Updating isHome status
@@ -127,13 +127,7 @@ const Home = () => {
                     <div className="loading">Loading...</div>
                     ) : (
                     <div className="movie-categories">
-                        {searching && !error && (searchedMovies.length > 0) && <p className="search-results-heading">Search Results of "{searchKeyword}"</p>}
-                        {searching && !error && (searchedMovies.length == 0) && <p className="search-results-heading">No results Found. Try another Keyword</p>}
-                        {!error && searching && <div className="searched-movies-wrapper">
-                            {searchedMovies.map((movie) => (
-                                <MovieCard movie={movie} key={movie.id} />
-                            ))}
-                        </div>}
+                        <Search />
                         {(!error && !searching) && <MovieCatHeading tag="POPULAR" />}
                         {!searching && <Swiper modules={[Navigation, A11y]}
                         spaceBetween={20}
