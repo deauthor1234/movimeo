@@ -1,7 +1,6 @@
-import { SwiperSlide } from "swiper/react";
 import HeaderCard from "../components/HeaderCard";
 import { Navigation, Pagination, A11y } from 'swiper/modules';
-import Swiper from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const Header = ({ movies, tag, nameClass }) => {
 
@@ -12,7 +11,7 @@ const Header = ({ movies, tag, nameClass }) => {
         navigation
         pagination={{ clickable: true }}
         className="header-card-wrapper">
-            {{movies}.map((movie) => (
+            {movies.map((movie) => (
                 <SwiperSlide key={movie.id}>
                     <HeaderCard movie={movie} tag={tag} />
                 </SwiperSlide>

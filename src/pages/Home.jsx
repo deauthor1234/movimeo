@@ -2,17 +2,17 @@ import { useState, useEffect } from "react"
 import { getPopularMovies, getTopRatedMovies, getUpcomingMovies, getAiringMovies } from "../services/api"
 import MovieCatHeading from "../components/MovieCatHeading";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from 'swiper/modules';
+import { Navigation, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import MovieCard from "../components/MovieCard";
 import { useMovieContext } from '../contexts/MovieContext';
-import { BiLeftArrowAlt, BiLogoApple, BiLogoFacebook, BiLogoInstagram, BiLogoPlayStore, BiLogoTiktok, BiLogoTwitter, BiMovie } from "react-icons/bi";
-import HeaderCard from "../components/HeaderCard";
-import { NavLink } from "react-router-dom";
+import { BiLeftArrowAlt } from "react-icons/bi";
 import ScrollToTop from "../components/ScrollToTop";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 const Home = () => {
     const [popularMovies, setPopularMovies] = useState([]);
@@ -114,22 +114,7 @@ const Home = () => {
     return (
         <section id="home">
             <ScrollToTop />
-            {(!error && !searching) &&
-                <header>
-                    <Swiper modules={[Navigation, Pagination, A11y]}
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    navigation
-                    pagination={{ clickable: true }}
-                    className="header-card-wrapper">
-                        {headerMovies.map((movie) => (
-                            <SwiperSlide key={movie.id}>
-                                <HeaderCard movie={movie} tag={'Top 5 Most Popular'} />
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </header>
-            }  
+            {(!error && !searching) && <Header tag="Top Popular Movies" movies={headerMovies} />}  
             <div className="container_wrapper">
                 <div className="container">
                     {searching && <p className="back-btn" onClick={() => {
@@ -185,22 +170,7 @@ const Home = () => {
                             ))}
                         </Swiper>}
 
-                        {(!error, !searching) &&
-                            <header className="other">
-                                <Swiper modules={[Navigation, Pagination, A11y]}
-                                spaceBetween={0}
-                                slidesPerView={1}
-                                navigation
-                                pagination={{ clickable: true }}
-                                className="header-card-wrapper">
-                                    {airingMovies.map((movie) => (
-                                        <SwiperSlide key={movie.id}>
-                                            <HeaderCard movie={movie} tag="Airing Today" />
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
-                            </header>
-                        }
+                        {(!error, !searching) && <Header tag="Airing Today" nameClass="other" movies={airingMovies} />}
 
                         {(!error && !searching) && <MovieCatHeading tag="THIS YEAR'S" />}
                         {!searching && <Swiper modules={[Navigation, A11y]}
@@ -241,49 +211,7 @@ const Home = () => {
                     )}
                 </div>
             </div>
-            {(!error && !searching && !loading) && <footer>
-                <div className="container">
-                    <div className="org-info">
-                        <div className="navbar-brand">
-                            <NavLink to="/"><BiMovie /> Movi<span>Meo</span></NavLink>
-                        </div>
-                        <p className="footer-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae magnam labore quasi, in libero!</p>
-                        <div className="footer-ics">
-                            <i className="ic"><BiLogoInstagram /></i>
-                            <i className="ic"><BiLogoTiktok /></i>
-                            <i className="ic"><BiLogoFacebook /></i>
-                            <i className="ic"><BiLogoTwitter /></i>
-                        </div>
-                    </div>
-                    <div className="footer-list">
-                        <p className="footer-heading">Support</p>
-                        <div>
-                            <ul>
-                                <li>FAQ</li>
-                                <li>Help Center</li>
-                                <li>Contact</li>
-                                <li>Watch On TV</li>
-                            </ul>
-                            <ul>
-                                <li>My Account</li>
-                                <li>Company Support</li>
-                                <li>API</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="download-media-wrapper">
-                        <p className="footer-heading">Download The App</p>
-                        <div className="download-media">
-                            <div className="download-btn"><BiLogoPlayStore /> Play Store</div>
-                            <div className="download-btn"><BiLogoApple /> App Store</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="container bottom-info">
-                    <span>Copyright &copy; 2025, Movimeo, All Rights Reserved</span>
-                    <span>Privacy Policy</span>
-                </div>
-            </footer>}
+            {(!error && !searching && !loading) && <Footer />}
         </section>
     )
 }
