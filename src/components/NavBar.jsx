@@ -1,13 +1,12 @@
 import { NavLink } from "react-router-dom"
-import { BiMovie, BiSearch, BiSolidHeart, BiSolidHome, BiSolidMoon, BiSolidSun } from "react-icons/bi"
+import { BiMovie, BiSolidHeart, BiSolidHome} from "react-icons/bi"
 import { useMovieContext } from '../contexts/MovieContext';
-import { useState } from "react";
 import SearchBar from "./SearchBar";
 import ThemeToggler from "./ThemeToggler";
+import SearchBarToggler from "./SearchBarToggler";
 
 const NavBar = () => {
     const linkClass = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
-    const [searchBarClass, setSearchBarClass] = useState("");
     const { isHome, isDarkTheme } = useMovieContext()
 
     return (
@@ -16,10 +15,10 @@ const NavBar = () => {
                 <div className="navbar-brand" data-aos="fade-right">
                     <NavLink to="/"><BiMovie /> Movi<span>Meo</span></NavLink>
                 </div>
-                {isHome && <SearchBar prop={searchBarClass} />}
+                {isHome && <SearchBar />}
                 <div className="nav-group">
                     <div className="other-links">
-                        {isHome && <div className="search-btn" onClick={() => (searchBarClass === "") ? setSearchBarClass(' show') : setSearchBarClass('')}><BiSearch /></div>}
+                        {isHome && <SearchBarToggler />}
                         <ThemeToggler />
                     </div>
                     <div className="navbar-links">

@@ -13,6 +13,7 @@ export const MovieProvider = ({ children }) => {
     const [searchedMovies, setSearchedMovies] = useState([]);
     const [searchInput, setSearchInput] = useState('');
     const [searchKeyword, setSearchKeyword] = useState();
+    const [searchBarClass, setSearchBarClass] = useState("");
     const [isHome, setIsHome] = useState(true);
     const [isDarkTheme, setIsDarkTheme] = useState(true);
     
@@ -56,6 +57,8 @@ export const MovieProvider = ({ children }) => {
         setError,
         searchKeyword,
         setSearchKeyword,
+        searchBarClass,
+        setSearchBarClass,
         isHome,
         setIsHome,
         isDarkTheme,

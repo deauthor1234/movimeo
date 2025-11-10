@@ -4,8 +4,8 @@ import { BiSearch } from "react-icons/bi";
 import { searchMovies } from "../services/api"
 import Aos from "aos";
 
-const SearchBar = ({ prop }) => {
-    const { searchInput, setSearchInput, setSearchedMovies, loading, setLoading, setSearching, setSearchKeyword, setError } = useMovieContext()
+const SearchBar = () => {
+    const { searchInput, setSearchInput, setSearchedMovies, loading, setLoading, setSearching, setSearchKeyword, setError, searchBarClass } = useMovieContext()
 
     const [isDisabled, setIsDisabled] = useState(window.innerWidth <= 950);
 
@@ -43,7 +43,7 @@ const SearchBar = ({ prop }) => {
     }, []);
 
     return (
-        <form onSubmit={handleSearch} className={`search-form${prop}`}{...(!isDisabled && { "data-aos": "fade-up" })}>
+        <form onSubmit={handleSearch} className={`search-form${searchBarClass}`}{...(!isDisabled && { "data-aos": "fade-up" })}>
             <BiSearch className="search-ic" />
             <input type="text" name="search-query"  className="search-bar" placeholder="Search for movies..." value={searchInput} onChange={(e) => setSearchInput(e.target.value)} required />
             <button type="submit" className="submit-btn">Search</button>
