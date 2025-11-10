@@ -3,12 +3,12 @@ import { BiMovie, BiSearch, BiSolidHeart, BiSolidHome, BiSolidMoon, BiSolidSun }
 import { useMovieContext } from '../contexts/MovieContext';
 import { useState } from "react";
 import SearchBar from "./SearchBar";
+import ThemeToggler from "./ThemeToggler";
 
 const NavBar = () => {
     const linkClass = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
     const [searchBarClass, setSearchBarClass] = useState("");
-    const { isHome, isDarkTheme, setIsDarkTheme } = useMovieContext()
-    !isDarkTheme ? document.body.classList.add("light") : document.body.classList.remove("light")
+    const { isHome, isDarkTheme } = useMovieContext()
 
     return (
         <nav className={!isDarkTheme && "light"}>
@@ -20,9 +20,7 @@ const NavBar = () => {
                 <div className="nav-group">
                     <div className="other-links">
                         {isHome && <div className="search-btn" onClick={() => (searchBarClass === "") ? setSearchBarClass(' show') : setSearchBarClass('')}><BiSearch /></div>}
-                        <div onClick={() => isDarkTheme ? setIsDarkTheme(false) : setIsDarkTheme(true)} className="themeToggle">
-                            <div className="thumb">{isDarkTheme ? <BiSolidMoon className="moon" /> : <BiSolidSun className="sun" />}</div>
-                        </div>
+                        <ThemeToggler />
                     </div>
                     <div className="navbar-links">
                         <NavLink to="/" className={linkClass} data-aos="fade-up" data-aos-once="true"><span>Home</span><BiSolidHome /></NavLink>
