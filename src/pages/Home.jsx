@@ -13,7 +13,7 @@ import { BiLeftArrowAlt } from "react-icons/bi";
 import ScrollToTop from "../components/ScrollToTop";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Search from "../components/Search";
+import Search from "../components/SearchResults";
 
 const Home = () => {
     const [popularMovies, setPopularMovies] = useState([]);

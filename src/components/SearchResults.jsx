@@ -1,9 +1,10 @@
 import { useMovieContext } from "../contexts/MovieContext"
 import MovieCard from "./MovieCard"
 
-const { searching, error, searchKeyword } = useMovieContext()
 
-const Search = () => {
+const SearchResults = () => {
+  const { searching, error, searchKeyword, searchedMovies } = useMovieContext()
+  
   return (
     <>
       {searching && !error && (searchedMovies.length > 0) && <p className="search-results-heading">Search Results of "{searchKeyword}"</p>}
@@ -16,4 +17,4 @@ const Search = () => {
     </>
   )
 }
-export default Search
+export default SearchResults
