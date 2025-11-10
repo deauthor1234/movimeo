@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useCallback, useEffect } from "react"
 import { useMovieContext } from '../contexts/MovieContext';
 import { useMovies } from "../hooks/useMovies";
 import ScrollToTop from "../components/ScrollToTop";
@@ -15,9 +15,9 @@ const Home = () => {
     const {popularMovies, updatedRecentMovies, topRatedMovies, upcomingMovies, headerMovies, airingMovies } = useMovies()
 
     //Updating isHome status
-    useEffect(() => {
+    useEffect(useCallback(() => (() => {
         setIsHome(true)
-    }, [])
+    }), []), []) 
     
     return (
         <section id="home">
