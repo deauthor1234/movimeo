@@ -1,13 +1,11 @@
-import { BiLogoApple, BiLogoFacebook, BiLogoInstagram, BiLogoPlayStore, BiLogoTiktok, BiLogoTwitter, BiMovie } from "react-icons/bi";
-import { NavLink } from "react-router-dom";
+import { BiLogoApple, BiLogoFacebook, BiLogoInstagram, BiLogoPlayStore, BiLogoTiktok, BiLogoTwitter } from "react-icons/bi";
+import Logo from "./Logo";
 
 const Footer = () => {
     return <footer>
         <div className="container">
             <div className="org-info">
-                <div className="navbar-brand">
-                    <NavLink to="/"><BiMovie /> Movi<span>Meo</span></NavLink>
-                </div>
+                <Logo />
                 <p className="footer-des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia vitae magnam labore quasi, in libero!</p>
                 <div className="footer-ics">
                     <i className="ic"><BiLogoInstagram /></i>

@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom"
-import { BiMovie, BiSolidHeart, BiSolidHome} from "react-icons/bi"
+import { BiSolidHeart, BiSolidHome} from "react-icons/bi"
 import { useMovieContext } from '../contexts/MovieContext';
 import SearchBar from "./SearchBar";
 import ThemeToggler from "./ThemeToggler";
 import SearchBarToggler from "./SearchBarToggler";
+import Logo from "./Logo";
 
 const NavBar = () => {
     const linkClass = ({ isActive }) => isActive ? "nav-link active" : "nav-link";
@@ -12,9 +13,7 @@ const NavBar = () => {
     return (
         <nav className={!isDarkTheme && "light"}>
             <div className="navbar">
-                <div className="navbar-brand" data-aos="fade-right">
-                    <NavLink to="/"><BiMovie /> Movi<span>Meo</span></NavLink>
-                </div>
+                <Logo aosAnim="fade-down" />
                 {isHome && <SearchBar />}
                 <div className="nav-group">
                     <div className="other-links">

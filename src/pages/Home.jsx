@@ -9,21 +9,18 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import MovieCard from "../components/MovieCard";
 import { useMovieContext } from '../contexts/MovieContext';
-import { BiLeftArrowAlt } from "react-icons/bi";
 import ScrollToTop from "../components/ScrollToTop";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Search from "../components/SearchResults";
+import SearchResults from "../components/SearchResults";
+import BackBtn from "../components/BackBtn";
 
 const Home = () => {
     const [popularMovies, setPopularMovies] = useState([]);
     const [topRatedMovies, setTopRatedMovies] = useState([]);
     const [upcomingMovies, setUpcomingMovies] = useState([]);
     const [airingMovies, setAiringMovies] = useState([]);
-    const {
-        loading, setLoading, searching, setSearching,
-        searchDep, setSearchDep, error, setError, setIsHome
-    } = useMovieContext()
+    const { loading, setLoading, searching, searchDep, error, setError, setIsHome } = useMovieContext()
 
     //Updating isHome status
     useEffect(() => {
@@ -117,17 +114,13 @@ const Home = () => {
             {(!error && !searching) && <Header tag="Top Popular Movies" movies={headerMovies} />}  
             <div className="container_wrapper">
                 <div className="container">
-                    {searching && <p className="back-btn" onClick={() => {
-                        setSearching(false)
-                        setError(null)
-                        setSearchDep(searchDep + 1)
-                    }}><BiLeftArrowAlt className="ic" /> Back to Home</p>}
+                    {searching && <BackBtn />}
                     {error && <div className={`error-message ${searching && "searching"}`}>{error}</div>}
                     {loading ? (
                     <div className="loading">Loading...</div>
                     ) : (
                     <div className="movie-categories">
-                        <Search />
+                        <SearchResults />
                         {(!error && !searching) && <MovieCatHeading tag="POPULAR" />}
                         {!searching && <Swiper modules={[Navigation, A11y]}
                         spaceBetween={20}
