@@ -15,9 +15,9 @@ const Home = () => {
     const {popularMovies, updatedRecentMovies, topRatedMovies, upcomingMovies, headerMovies, airingMovies } = useMovies()
 
     //Updating isHome status
-    useEffect(useCallback(() => (() => {
+    useEffect((() => {
         setIsHome(true)
-    }), []), []) 
+    }), []) 
     
     return (
         <section id="home">
