@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from "react"
+import { useEffect } from "react"
 import { useMovieContext } from '../contexts/MovieContext';
 import { useMovies } from "../hooks/useMovies";
 import ScrollToTop from "../components/ScrollToTop";

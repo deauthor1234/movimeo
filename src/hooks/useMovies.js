@@ -44,6 +44,7 @@ export function useMovies() {
         }
     }, []);
 
+    //Fetching upcoming movies
     const loadUpcomingMovies = useCallback(async () => {
         try {
             const res = await getUpcomingMovies();
@@ -57,12 +58,17 @@ export function useMovies() {
     //Fetching upcoming movies
     useEffect(() => {
         const loadAll = async () => {
-        setLoading(true);
-        try {
-            await Promise.all([loadPopularMovies(), loadTopRatedMovies(), loadAiringMovies(), loadUpcomingMovies()]);
-        } finally {
-            setLoading(false);
-        }
+            setLoading(true);
+            try {
+                await Promise.all([
+                    loadPopularMovies(),
+                    loadTopRatedMovies(),
+                    loadAiringMovies(),
+                    loadUpcomingMovies()
+                ]);
+            } finally {
+                setLoading(false);
+            }
         };
 
         loadAll();
