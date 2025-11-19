@@ -580,14 +580,14 @@ header .swiper-pagination-bullet-active {
 
 .search-results-heading {
     text-align: center;
-    margin: 2rem 0 3rem;
-    font-size: 1.3rem;
+    margin: 0 0 3rem;
+    font-size: 1.2rem;
 }
 
 .back-btn {
-    margin: 2rem 0 0;
+    margin: 2.5rem 0 0;
     padding: 3rem 0 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     display: flex;
     align-items: center;
     column-gap: 0.5rem;
