@@ -18,8 +18,8 @@ const MovieListings = ({ movies }) => {
         }}
         navigation
         className="movie-cards-wrapper">
-            {movies.map((movie) => (
-                <SwiperSlide key={movie.id}>
+            {movies.map((movie, index) => (
+                <SwiperSlide key={index}>
                     <MovieCard movie={movie} />
                 </SwiperSlide>
             ))}
