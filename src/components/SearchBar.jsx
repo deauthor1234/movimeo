@@ -5,7 +5,7 @@ import { searchMovies } from "../services/api"
 import Aos from "aos";
 
 const SearchBar = () => {
-    const { searchInput, setSearchInput, setSearchedMovies, loading, setLoading, setSearching, setSearchKeyword, setError, searchBarClass } = useMovieContext()
+    const { searchInput, setSearchInput, setSearchedMovies, loading, setLoading, setSearching, setSearchKeyword, setError, searchBarClass, setSearchBarClass } = useMovieContext()
 
     const [isDisabled, setIsDisabled] = useState(window.innerWidth <= 950);
 
@@ -15,12 +15,13 @@ const SearchBar = () => {
         if (loading) return
         setLoading(true);
         setSearching(true);
+        setSearchBarClass("")
 
         try {
             const searchResults = await searchMovies(searchInput);
             setSearchedMovies(searchResults)
             setError(null)
-            searchResults.length != 0 && await setSearchKeyword(searchInput)
+            searchResults.length != 0 && await setSearchKeyword(searchInput.trim())
         } catch(err) {
             console.log(err);
             setError('Encountered an error while searching for movies...')
@@ -43,7 +44,7 @@ const SearchBar = () => {
     }, []);
 
     return (
-        <form onSubmit={handleSearch} className={`search-form${searchBarClass}`}{...(!isDisabled && { "data-aos": "fade-up" })}>
+        <form onSubmit={handleSearch}  className={`search-form${searchBarClass}`}{...(!isDisabled && { "data-aos": "fade-up" })}>
             <BiSearch className="search-ic" />
             <input type="text" name="search-query"  className="search-bar" placeholder="Search for movies..." value={searchInput} onChange={(e) => setSearchInput(e.target.value)} required />
             <button type="submit" className="submit-btn">Search</button>
