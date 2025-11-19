@@ -909,6 +909,7 @@ header .swiper-pagination-bullet-active {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
+    margin: 0 0 2rem;
 }
 
 footer {
@@ -1272,7 +1273,7 @@ footer .download-media svg {
     }
 
     nav {
-        padding: 1rem 1.5rem;
+        padding: 1.2rem 1.5rem;
     }
 
     nav .nav-group {
@@ -1374,7 +1375,7 @@ footer .download-media svg {
     }
 
     nav {
-        padding: 0.8rem 1rem;
+        padding: 1.2rem 1rem;
     }
 
     .search-form {
@@ -1436,7 +1437,11 @@ footer .download-media svg {
     }
 
     .favorites {
-        margin: 4rem 0 0;
+        margin: 5.5rem 0 0;
+    }
+    
+    .favorites .favorite-movies-wrapper {
+        margin: 0 0 1rem;
     }
 }
 
