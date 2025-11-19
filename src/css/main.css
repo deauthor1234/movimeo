@@ -1114,7 +1114,6 @@ footer .download-media svg {
         pointer-events: none;
         transition: all 0.3s;
         box-shadow: 0 10px 10px #0002;
-        border-radius: 0 0 10px 10px;
     }
 
     .search-form.show {
@@ -1209,7 +1208,7 @@ footer .download-media svg {
 
     .search-form .search-bar,
     .search-form .submit-btn {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .scroll-to-top-btn {
@@ -1376,6 +1375,18 @@ footer .download-media svg {
 
     nav {
         padding: 0.8rem 1rem;
+    }
+
+    .search-form {
+        width: 95%;
+    }
+
+    .search-form .search-bar {
+        border-radius: 0 0 0 6px;
+    }
+
+    .search-form .submit-btn {
+        border-radius: 0 0 6px 0;
     }
 
     header.other {
