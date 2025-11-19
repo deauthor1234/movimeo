@@ -39,7 +39,7 @@ const Footer = () => {
             </div>
         </div>
         <div className="container bottom-info">
-            <span>Copyright &copy; 2025, Movimeo, All Rights Reserved</span>
+            <span>© {new Date().getFullYear()} Oladapo Authority. All rights reserved.</span>
             <span>Privacy Policy</span>
         </div>
     </footer>
