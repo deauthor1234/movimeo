@@ -1207,6 +1207,11 @@ footer .download-media svg {
         font-size: 1.1rem;
     }
 
+    .search-form .search-bar,
+    .search-form .submit-btn {
+        font-size: 1.1rem;
+    }
+
     .scroll-to-top-btn {
         margin: 2.7rem 2rem;
     }
@@ -1494,7 +1499,11 @@ footer .download-media svg {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 375px) {.search-form .search-bar,
+    .search-form .submit-btn {
+        font-size: 1rem;
+    }
+
     .movie-categories .movie-category {
         letter-spacing: 4px;
     }
