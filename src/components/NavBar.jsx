@@ -11,7 +11,7 @@ const NavBar = () => {
     const { isHome, isDarkTheme } = useMovieContext()
 
     return (
-        <nav className={!isDarkTheme && "light"}>
+        <nav className={!isDarkTheme ? "light" : undefined}>
             <div className="navbar">
                 <Logo aosAnim="fade-down" />
                 {isHome && <SearchBar />}
